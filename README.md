@@ -1,7 +1,7 @@
 # Epidemiology-PA-LTA
 Research with MRC Epidemiology, looking at latent trajectories of physical activity (PA) data (BCS70).
 
-**PA Data prep, harmonisation, LTA on HPC**
+**PA Data prep and harmonisation**
 - Cleaning and harmonising the BCS70 PA data across years
 
 **LTA exploration and HPC code**
