@@ -26,7 +26,7 @@ nm_summary = summary(null_model)
 
 
 
-#### Simple model (no imputed data required) ##########
+#### Simple model ##########
 
 simple_imputed_model <- with(imputed_data, 
                              multinom(class ~ 
@@ -50,7 +50,7 @@ sixteen_focused_model = with(imputed_data,
      multinom(class ~ 
            SEP + gender +  ethnicity_collapsed + 
            region_16 + malaise_16 +
-           school_type_16 + parental_sc_16 +
+           school_type_16 + parental_class_10 +
            children_26))
 
 sf_fit = averageAICdivergence(sixteen_focused_model)
@@ -62,8 +62,7 @@ sixteen_focused_summary = summary(sixteen_focused_pool)
 
 
 
-#### SVF2 model (no imputed data required) ##########
-
+#### SVF2 model  ##########
 
 sixten_focused_v2_model = with(imputed_data,
                             multinom(class ~ 
