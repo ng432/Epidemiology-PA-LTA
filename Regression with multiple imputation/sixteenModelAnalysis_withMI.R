@@ -3,6 +3,7 @@
 library(dplyr)
 library(nnet)
 library(mice)
+library(ggplot2)
 
 source("convergencePlotFunctions.R")
 
@@ -177,6 +178,24 @@ for (SEP in SEP_names)
   pred_probalities <- rbind(pred_probalities, new_row)
   
 }
+
+SEP_names = c(
+  "Cont. Educ.",
+  "Managerial",
+  "Skill. Non-manual",
+  "Skill. Manual",
+  "Partly Skill.",
+  "Econom Inactive"
+)
+
+# renaming levels to make more sense
+levels(pred_probalities$SEP) = SEP_names
+
+ggplot(pred_probalities, aes(x = ActivityLevel, y = PredictiveProbability, color = SEP)) +
+  geom_point() +
+  theme_minimal() +
+  labs(title = "Scatter Plot", x = "SEP", y = "Probability", color = "Activity Level")
+
 
 
 
